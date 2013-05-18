@@ -10,6 +10,8 @@
 	<modules>
 		<module>benworks-bookcode-thinkinginjava</module>
 		<module>benworks-bookcode-jcip</module>
+		<module>benworks-bookcode-wsjc</module>
+		<module>benworks-bookcode-jvm</module>
 	</modules>
 
 
