@@ -12,6 +12,7 @@
 		<module>benworks-bookcode-jcip</module>
 		<module>benworks-bookcode-wsjc</module>
 		<module>benworks-bookcode-jvm</module>
+		<module>benworks-bookcode-j7cc</module>
 	</modules>
 
 
