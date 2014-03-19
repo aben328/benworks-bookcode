@@ -45,7 +45,7 @@ public class CleanerTask extends Thread {
 		boolean delete;
 
 		if (deque.size() == 0) {
-			return;
+			return; 
 		}
 
 		delete = false;
