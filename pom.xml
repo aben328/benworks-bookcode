@@ -13,6 +13,7 @@
 		<module>benworks-bookcode-wsjc</module>
 		<module>benworks-bookcode-jvm</module>
 		<module>benworks-bookcode-j7cc</module>
+		<module>benworks-bookcode-demo</module>
 	</modules>
 
 
