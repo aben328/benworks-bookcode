@@ -1,6 +1,6 @@
 package com.packtpub.java7.concurrency.chapter2.recipe1.core;
 
-import com.packtpub.java7.concurrency.chapter2.recipe1.task.AccountProblem;
+import com.packtpub.java7.concurrency.chapter2.recipe1.task.Account;
 import com.packtpub.java7.concurrency.chapter2.recipe1.task.Bank;
 import com.packtpub.java7.concurrency.chapter2.recipe1.task.Company;
 
@@ -10,7 +10,7 @@ import com.packtpub.java7.concurrency.chapter2.recipe1.task.Company;
  * to work with the account. The final balance should be equal to the initial, but....
  *
  */
-public class Main {
+public class MainProblem {
 
 	/**
 	 * Main method of the example
@@ -18,7 +18,7 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		// Creates a new account ...
-		AccountProblem	account=new AccountProblem();
+		Account	account=new Account();
 		// an initialize its balance to 1000
 		account.setBalance(1000);
 		

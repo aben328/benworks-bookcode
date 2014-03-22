@@ -1,10 +1,10 @@
-package com.packtpub.java7.concurrency.chapter2.recipe1.task;
+package com.packtpub.java7.concurrency.chapter2.recipe1.task2;
 
 /**
- * This class simulate a bank account 
+ * This class simulates a bank account 
  *
  */
-public class AccountProblem {
+public class Account {
 
 	/**
 	 * Balance of the bank account
@@ -29,9 +29,9 @@ public class AccountProblem {
 	
 	/**
 	 * Add an import to the balance of the account
-	 * @param amount import to add to the balance
+	 * @param amount the import to add to the balance of the account
 	 */
-	public void addAmount(double amount) {
+	public synchronized void addAmount(double amount) {
 		double tmp=balance;
 		try {
 			Thread.sleep(10);
@@ -44,9 +44,9 @@ public class AccountProblem {
 	
 	/**
 	 * Subtract an import to the balance of the account
-	 * @param amount import to subtract to the balance
+	 * @param amount the import to subtract to the balance of the account 
 	 */
-	public void subtractAmount(double amount) {
+	public synchronized void subtractAmount(double amount) {
 		double tmp=balance;
 		try {
 			Thread.sleep(10);

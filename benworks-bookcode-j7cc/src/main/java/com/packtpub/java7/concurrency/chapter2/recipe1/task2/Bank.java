@@ -1,9 +1,9 @@
-package com.packtpub.java7.concurrency.chapter2.recipe1.task;
+package com.packtpub.java7.concurrency.chapter2.recipe1.task2;
 
 /**
  * This class simulates a bank or a cash dispenser that takes money
  * from an account
- *
+ * 
  */
 public class Bank implements Runnable {
 
@@ -19,7 +19,6 @@ public class Bank implements Runnable {
 	public Bank(Account account) {
 		this.account=account;
 	}
-	
 	
 	/**
 	 * Core method of the Runnable
