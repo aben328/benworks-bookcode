@@ -26,6 +26,7 @@ public class Company implements Runnable {
 	public void run() {
 		for (int i=0; i<100; i++){
 			account.addAmount(1000);
+			System.out.printf("Company : addAmount 1000, Balance : %f\n", account.getBalance());
 		}
 	}
 

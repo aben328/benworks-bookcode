@@ -26,6 +26,7 @@ public class Bank implements Runnable {
 	public void run() {
 		for (int i=0; i<100; i++){
 			account.subtractAmount(1000);
+			System.out.printf("Bank : subtractAmount 1000, Balance : %f\n", account.getBalance());
 		}
 	}
 
