@@ -1,0 +1,23 @@
+package c8;
+
+// : CrashJava.java
+// One way to crash Java
+import java.util.Vector;
+
+/**
+ * 
+ * @author Ben
+ *
+ */
+public class CrashJava {
+	public String toString() {
+		return "CrashJava address: " + this + "\n";
+	}
+
+	public static void main(String[] args) {
+		Vector v = new Vector();
+		for (int i = 0; i < 10; i++)
+			v.addElement(new CrashJava());
+		System.out.println(v);
+	}
+} // /:~
