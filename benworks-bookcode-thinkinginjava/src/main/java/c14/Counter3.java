@@ -1,23 +1,19 @@
-// : Counter1.java
-// A non-responsive user interface
 package c14;
 
-import java.applet.Applet;
-import java.awt.BorderLayout;
-import java.awt.Button;
-import java.awt.Frame;
-import java.awt.TextField;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
+// : Counter3.java
+// Using the Runnable interface to turn the
+// main class into a thread.
+import java.awt.*;
+import java.awt.event.*;
+import java.applet.*;
 
-public class Counter1 extends Applet {
-	private static final long serialVersionUID = -5216975641805172520L;
+public class Counter3 extends Applet implements Runnable {
+	private static final long serialVersionUID = 1900511027505112223L;
 	private int count = 0;
+	private boolean runFlag = true;
+	private Thread selfThread = null;
 	private Button onOff = new Button("Toggle"), start = new Button("Start");
 	private TextField t = new TextField(10);
-	private boolean runFlag = true;
 
 	public void init() {
 		add(t);
@@ -27,21 +23,23 @@ public class Counter1 extends Applet {
 		add(onOff);
 	}
 
-	public void go() {
+	public void run() {
 		while (true) {
 			try {
-				Thread.currentThread().sleep(100);
+				selfThread.sleep(100);
 			} catch (InterruptedException e) {
 			}
 			if (runFlag)
 				t.setText(Integer.toString(count++));
-
 		}
 	}
 
 	class StartL implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
-			go();
+			if (selfThread == null) {
+				selfThread = new Thread(Counter3.this);
+				selfThread.start();
+			}
 		}
 	}
 
@@ -52,8 +50,8 @@ public class Counter1 extends Applet {
 	}
 
 	public static void main(String[] args) {
-		Counter1 applet = new Counter1();
-		Frame aFrame = new Frame("Counter1");
+		Counter3 applet = new Counter3();
+		Frame aFrame = new Frame("Counter3");
 		aFrame.addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
 				System.exit(0);
@@ -65,4 +63,4 @@ public class Counter1 extends Applet {
 		applet.start();
 		aFrame.setVisible(true);
 	}
-} // /:~ 
+} // /:~
