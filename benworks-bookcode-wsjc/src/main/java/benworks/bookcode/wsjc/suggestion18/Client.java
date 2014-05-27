@@ -16,6 +16,7 @@ public class Client {
 		boolean b6 = (String) null instanceof String;
 		// boolean b7 = new Date() instanceof String;
 		boolean b8 = new GenericClass<String>().isDateInstance("");
+		
 	}
 }
 
