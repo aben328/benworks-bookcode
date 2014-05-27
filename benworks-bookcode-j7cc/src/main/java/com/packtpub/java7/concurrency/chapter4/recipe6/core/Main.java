@@ -22,7 +22,7 @@ public class Main {
 		ExecutorService executor = (ExecutorService) Executors.newCachedThreadPool();
 
 		// Create three tasks and stores them in a List
-		List<Task> taskList = new ArrayList<>();
+		List<Task> taskList = new ArrayList<Task>();
 		for (int i = 0; i < 3; i++) {
 			Task task = new Task("Task-" + i);
 			taskList.add(task);
@@ -45,10 +45,11 @@ public class Main {
 			try {
 				Result result = future.get();
 				System.out.printf("%s: %s\n", result.getName(), result.getValue());
-			} catch (InterruptedException | ExecutionException e) {
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			} catch (ExecutionException e) {
 				e.printStackTrace();
 			}
 		}
 	}
-
 }

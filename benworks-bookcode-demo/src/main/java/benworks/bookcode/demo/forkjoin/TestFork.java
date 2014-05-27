@@ -1,11 +1,13 @@
 package benworks.bookcode.demo.forkjoin;
 
-import org.junit.Test;
+import static org.junit.Assert.*;
+
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.Future;
 
+import org.junit.Test;
 
-public class Test {
+public class TestFork {
 
 	@Test
 	public void run() throws Exception {
