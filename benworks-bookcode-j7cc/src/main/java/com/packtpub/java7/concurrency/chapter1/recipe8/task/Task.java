@@ -8,6 +8,7 @@ public class Task implements Runnable {
 	/**
 	 * Main method of the class
 	 */
+	@SuppressWarnings("unused")
 	@Override
 	public void run() {
 		// The next instruction always throws and exception

@@ -3,48 +3,43 @@ package com.packtpub.java7.concurrency.chapter3.recipe3.task;
 import java.util.concurrent.CountDownLatch;
 
 /**
- * This class implements the controller of the Videoconference
- * 
- * It uses a CountDownLatch to control the arrival of all the 
- * participants in the conference.
- *
+ * This class implements the controller of the Videoconference It uses a CountDownLatch to control the arrival of all
+ * the participants in the conference.
  */
-public class Videoconference implements Runnable{
+public class Videoconference implements Runnable {
 
 	/**
-	 * This class uses a CountDownLatch to control the arrivel of all
-	 * the participants
-	 * 同步辅助类，在完成一组正在其它线程中执行的操作之前，它允许相互等待
+	 * This class uses a CountDownLatch to control the arrivel of all the participants 同步辅助类，在完成一组正在其它线程中执行的操作之前，它允许相互等待
 	 */
 	private final CountDownLatch controller;
-	
+
 	/**
 	 * Constructor of the class. Initializes the CountDownLatch
 	 * @param number The number of participants in the videoconference
 	 */
 	public Videoconference(int number) {
-		controller=new CountDownLatch(number);
+		controller = new CountDownLatch(number);
 	}
 
 	/**
 	 * This method is called by every participant when he incorporates to the VideoConference
 	 * @param participant
 	 */
-	public void arrive(String name){
-		System.out.printf("%s has arrived.\n",name);
+	public void arrive(String name) {
+		System.out.printf("%s has arrived.\n", name);
 		// This method uses the countDown method to decrement the internal counter of the
 		// CountDownLatch
 		controller.countDown();
-		System.out.printf("VideoConference: Waiting for %d participants.\n",controller.getCount());
+		System.out.printf("VideoConference: Waiting for %d participants.\n", controller.getCount());
 	}
-	
+
 	/**
-	 * This is the main method of the Controller of the VideoConference. It waits for all
-	 * the participants and the, starts the conference
+	 * This is the main method of the Controller of the VideoConference. It waits for all the participants and the,
+	 * starts the conference
 	 */
 	@Override
 	public void run() {
-		System.out.printf("VideoConference: Initialization: %d participants.\n",controller.getCount());
+		System.out.printf("VideoConference: Initialization: %d participants.\n", controller.getCount());
 		try {
 			// Wait for all the participants
 			controller.await();
@@ -55,6 +50,5 @@ public class Videoconference implements Runnable{
 			e.printStackTrace();
 		}
 	}
-	
-	
+
 }

@@ -8,6 +8,6 @@ public class Producer {
 		Person person = new Person();
 		person.setName("混世魔王");
 		SerializationUtils.writeObject(person);
-		
+
 	}
 }

@@ -1,7 +1,7 @@
 package c10;
 
-//: SortedDirList.java
-//Displays sorted directory listing
+// : SortedDirList.java
+// Displays sorted directory listing
 import java.io.File;
 import java.io.FilenameFilter;
 

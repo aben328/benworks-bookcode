@@ -1,8 +1,8 @@
 package c15;
 
-//: JabberServer.java
-//Very simple server that just
-//echoes whatever the client sends.
+// : JabberServer.java
+// Very simple server that just
+// echoes whatever the client sends.
 import java.io.*;
 import java.net.*;
 
@@ -18,12 +18,11 @@ public class JabberServer {
 			Socket socket = s.accept();
 			try {
 				System.out.println("Connection accepted: " + socket);
-				BufferedReader in = new BufferedReader(new InputStreamReader(
-						socket.getInputStream()));
+				BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 				// Output is automatically flushed
 				// by PrintWriter:
-				PrintWriter out = new PrintWriter(new BufferedWriter(
-						new OutputStreamWriter(socket.getOutputStream())), true);
+				PrintWriter out = new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())),
+						true);
 				while (true) {
 					String str = in.readLine();
 					if (str.equals("END"))

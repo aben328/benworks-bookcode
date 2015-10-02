@@ -1,7 +1,7 @@
 package c10;
 
-//: Worm.java
-//Demonstrates object serialization in Java 1.1
+// : Worm.java
+// Demonstrates object serialization in Java 1.1
 import java.io.*;
 
 class Data implements Serializable {
@@ -52,13 +52,11 @@ public class Worm implements Serializable {
 		Worm w = new Worm(6, 'a');
 		System.out.println("w = " + w);
 		try {
-			ObjectOutputStream out = new ObjectOutputStream(
-					new FileOutputStream("worm.out"));
+			ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("worm.out"));
 			out.writeObject("Worm storage");
 			out.writeObject(w);
 			out.close(); // Also flushes output
-			ObjectInputStream in = new ObjectInputStream(new FileInputStream(
-					"worm.out"));
+			ObjectInputStream in = new ObjectInputStream(new FileInputStream("worm.out"));
 			String s = (String) in.readObject();
 			Worm w2 = (Worm) in.readObject();
 			System.out.println(s + ", w2 = " + w2);
@@ -71,8 +69,7 @@ public class Worm implements Serializable {
 			out.writeObject("Worm storage");
 			out.writeObject(w);
 			out.flush();
-			ObjectInputStream in = new ObjectInputStream(
-					new ByteArrayInputStream(bout.toByteArray()));
+			ObjectInputStream in = new ObjectInputStream(new ByteArrayInputStream(bout.toByteArray()));
 			String s = (String) in.readObject();
 			Worm w3 = (Worm) in.readObject();
 			System.out.println(s + ", w3 = " + w3);

@@ -1,6 +1,5 @@
 package c8;
 
-
 public class MyType implements Comparable {
 	private int i;
 

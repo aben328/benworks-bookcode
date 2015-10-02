@@ -1,4 +1,4 @@
-//: DirList3.java
+// : DirList3.java
 // Building the anonymous inner class "in-place"
 
 package c10;

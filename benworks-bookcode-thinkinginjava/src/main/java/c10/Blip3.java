@@ -1,7 +1,7 @@
 package c10;
 
-//: Blip3.java
-//Reconstructing an externalizable object
+// : Blip3.java
+// Reconstructing an externalizable object
 import java.io.*;
 
 class Blip3 implements Externalizable {
@@ -32,8 +32,7 @@ class Blip3 implements Externalizable {
 		out.writeInt(i);
 	}
 
-	public void readExternal(ObjectInput in) throws IOException,
-			ClassNotFoundException {
+	public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException {
 		System.out.println("Blip3.readExternal");
 		// You must do this:
 		s = (String) in.readObject();
@@ -46,14 +45,12 @@ class Blip3 implements Externalizable {
 		Blip3 b3 = new Blip3("A String ", 47);
 		System.out.println(b3.toString());
 		try {
-			ObjectOutputStream o = new ObjectOutputStream(new FileOutputStream(
-					"Blip3.out"));
+			ObjectOutputStream o = new ObjectOutputStream(new FileOutputStream("Blip3.out"));
 			System.out.println("Saving object:");
 			o.writeObject(b3);
 			o.close();
 			// Now get it back:
-			ObjectInputStream in = new ObjectInputStream(new FileInputStream(
-					"Blip3.out"));
+			ObjectInputStream in = new ObjectInputStream(new FileInputStream("Blip3.out"));
 			System.out.println("Recovering b3:");
 			b3 = (Blip3) in.readObject();
 			System.out.println(b3.toString());

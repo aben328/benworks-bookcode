@@ -4,31 +4,29 @@ import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 /**
- * This class simulates the store of two prices. We will
- * have a writer that stores the prices and readers that 
- * consult this prices
- *
+ * This class simulates the store of two prices. We will have a writer that stores the prices and readers that consult
+ * this prices
  */
 public class PricesInfo {
-	
+
 	/**
 	 * The two prices
 	 */
 	private double price1;
 	private double price2;
-	
+
 	/**
 	 * Lock to control the access to the prices
 	 */
 	private ReadWriteLock lock;
-	
+
 	/**
 	 * Constructor of the class. Initializes the prices and the Lock
 	 */
-	public PricesInfo(){
-		price1=1.0;
-		price2=2.0;
-		lock=new ReentrantReadWriteLock();
+	public PricesInfo() {
+		price1 = 1.0;
+		price2 = 2.0;
+		lock = new ReentrantReadWriteLock();
 	}
 
 	/**
@@ -37,7 +35,7 @@ public class PricesInfo {
 	 */
 	public double getPrice1() {
 		lock.readLock().lock();
-		double value=price1;
+		double value = price1;
 		lock.readLock().unlock();
 		return value;
 	}
@@ -48,7 +46,7 @@ public class PricesInfo {
 	 */
 	public double getPrice2() {
 		lock.readLock().lock();
-		double value=price2;
+		double value = price2;
 		lock.readLock().unlock();
 		return value;
 	}
@@ -60,8 +58,8 @@ public class PricesInfo {
 	 */
 	public void setPrices(double price1, double price2) {
 		lock.writeLock().lock();
-		this.price1=price1;
-		this.price2=price2;
+		this.price1 = price1;
+		this.price2 = price2;
 		lock.writeLock().unlock();
 	}
 }

@@ -5,9 +5,7 @@ package c8;
 import java.util.Vector;
 
 /**
- * 
  * @author Ben
- *
  */
 public class CrashJava {
 	public String toString() {

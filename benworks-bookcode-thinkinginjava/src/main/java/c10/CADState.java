@@ -1,8 +1,8 @@
 package c10;
 
-//: CADState.java
-//Saving and restoring the state of a 
-//pretend CAD system.
+// : CADState.java
+// Saving and restoring the state of a
+// pretend CAD system.
 import java.io.*;
 import java.util.*;
 
@@ -24,8 +24,8 @@ abstract class Shape implements Serializable {
 	}
 
 	public String toString() {
-		return getClass().toString() + " color[" + getColor() + "] xPos["
-				+ xPos + "] yPos[" + yPos + "] dim[" + dimension + "] \n";
+		return getClass().toString() + " color[" + getColor() + "] xPos[" + xPos + "] yPos[" + yPos + "] dim["
+				+ dimension + "] \n";
 	}
 
 	public static Shape randomFactory() {
@@ -84,13 +84,11 @@ class Line extends Shape {
 	private static final long serialVersionUID = -914355680738997454L;
 	private static int color = RED;
 
-	public static void serializeStaticState(ObjectOutputStream os)
-			throws IOException {
+	public static void serializeStaticState(ObjectOutputStream os) throws IOException {
 		os.writeInt(color);
 	}
 
-	public static void deserializeStaticState(ObjectInputStream os)
-			throws IOException {
+	public static void deserializeStaticState(ObjectInputStream os) throws IOException {
 		color = os.readInt();
 	}
 
@@ -124,14 +122,12 @@ public class CADState {
 			for (int i = 0; i < 10; i++)
 				((Shape) shapes.elementAt(i)).setColor(Shape.GREEN);
 			// Save the state vector:
-			ObjectOutputStream out = new ObjectOutputStream(
-					new FileOutputStream("CADState.out"));
+			ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("CADState.out"));
 			out.writeObject(shapeTypes);
 			Line.serializeStaticState(out);
 			out.writeObject(shapes);
 		} else { // There's a command-line argument
-			ObjectInputStream in = new ObjectInputStream(new FileInputStream(
-					args[0]));
+			ObjectInputStream in = new ObjectInputStream(new FileInputStream(args[0]));
 			// Read in the same order they were written:
 			shapeTypes = (Vector) in.readObject();
 			Line.deserializeStaticState(in);

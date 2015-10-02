@@ -6,7 +6,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
-//: InFile.java
+// : InFile.java
 // Shorthand class for opening an input file
 
 public class InFile extends DataInputStream {

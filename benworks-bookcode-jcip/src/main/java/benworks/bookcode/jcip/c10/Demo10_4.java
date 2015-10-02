@@ -15,7 +15,7 @@ public class Demo10_4 {
 			account = new Account();
 		}
 		for (int i = 0; i < NUM_THREADS; i++) {
-			 //must after TransferThread
+			// must after TransferThread
 			// class declared.
 			// new TransferThread().start();
 		}
@@ -29,12 +29,11 @@ public class Demo10_4 {
 				}
 			}
 
-			private void transferMoney(Account account, Account account2,
-					DollarAmount amount) {
+			private void transferMoney(Account account, Account account2, DollarAmount amount) {
 
 			}
 		}
-		
+
 		for (int i = 0; i < NUM_THREADS; i++) {
 			new TransferThread().start();
 		}

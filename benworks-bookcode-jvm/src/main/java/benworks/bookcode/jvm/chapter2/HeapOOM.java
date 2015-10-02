@@ -4,12 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Java堆内存溢出异常测试
- * 
- * VM Args : -Xms20m -Xmx20m -XX:+HeapDumpOnOutOofMemoryError
- * 
- * eg: -verbose:gc -Xms20m -Xmx20m -Xmn10m -XX:+PrintGCDetails -XX:SurvivorRatio=8
- * 
+ * Java堆内存溢出异常测试 VM Args : -Xms20m -Xmx20m -XX:+HeapDumpOnOutOofMemoryError eg: -verbose:gc -Xms20m -Xmx20m -Xmn10m
+ * -XX:+PrintGCDetails -XX:SurvivorRatio=8
  * @author Ben
  */
 public class HeapOOM {

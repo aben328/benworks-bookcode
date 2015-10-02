@@ -17,9 +17,9 @@ public class DirectMemoryOOM {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-//		Field unsafeField = Unsafe.class.getDeclaredFields()[0];
-//		unsafeField.setAccessible(true);
-//		Unsa
+		// Field unsafeField = Unsafe.class.getDeclaredFields()[0];
+		// unsafeField.setAccessible(true);
+		// Unsa
 	}
 
 }

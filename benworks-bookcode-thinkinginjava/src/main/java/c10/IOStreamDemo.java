@@ -1,7 +1,7 @@
 package c10;
 
-//: IOStreamDemo.java
-//Typical IO Stream Configurations
+// : IOStreamDemo.java
+// Typical IO Stream Configurations
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.DataInputStream;
@@ -24,8 +24,7 @@ public class IOStreamDemo {
 	public static void main(String[] args) {
 		try {
 			// 1. Buffered input file
-			DataInputStream in = new DataInputStream(new BufferedInputStream(
-					new FileInputStream(args[0])));
+			DataInputStream in = new DataInputStream(new BufferedInputStream(new FileInputStream(args[0])));
 			String s, s2 = new String();
 			while ((s = in.readLine()) != null)
 				s2 += s + "\n";
@@ -37,8 +36,7 @@ public class IOStreamDemo {
 				System.out.print((char) c);
 			// 3. Formatted memory input
 			try {
-				DataInputStream in3 = new DataInputStream(
-						new StringBufferInputStream(s2));
+				DataInputStream in3 = new DataInputStream(new StringBufferInputStream(s2));
 				while (true)
 					System.out.print((char) in3.readByte());
 			} catch (EOFException e) {
@@ -46,11 +44,9 @@ public class IOStreamDemo {
 			}
 			// 4. Line numbering & file output
 			try {
-				LineNumberInputStream li = new LineNumberInputStream(
-						new StringBufferInputStream(s2));
+				LineNumberInputStream li = new LineNumberInputStream(new StringBufferInputStream(s2));
 				DataInputStream in4 = new DataInputStream(li);
-				PrintStream out1 = new PrintStream(new BufferedOutputStream(
-						new FileOutputStream("IODemo.out")));
+				PrintStream out1 = new PrintStream(new BufferedOutputStream(new FileOutputStream("IODemo.out")));
 				while ((s = in4.readLine()) != null)
 					out1.println("Line " + li.getLineNumber() + s);
 				out1.close(); // finalize() not reliable!
@@ -59,14 +55,11 @@ public class IOStreamDemo {
 			}
 			// 5. Storing & recovering data
 			try {
-				DataOutputStream out2 = new DataOutputStream(
-						new BufferedOutputStream(new FileOutputStream(
-								"Data.txt")));
+				DataOutputStream out2 = new DataOutputStream(new BufferedOutputStream(new FileOutputStream("Data.txt")));
 				out2.writeBytes("Here's the value of pi: \n");
 				out2.writeDouble(3.14159);
 				out2.close();
-				DataInputStream in5 = new DataInputStream(
-						new BufferedInputStream(new FileInputStream("Data.txt")));
+				DataInputStream in5 = new DataInputStream(new BufferedInputStream(new FileInputStream("Data.txt")));
 				System.out.println(in5.readLine());
 				System.out.println(in5.readDouble());
 			} catch (EOFException e) {

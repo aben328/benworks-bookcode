@@ -4,7 +4,6 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeSet;
 
-
 public class Set2 {
 	public static Set fill(Set a, int size) {
 		for (int i = 0; i < size; i++)

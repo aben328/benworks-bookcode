@@ -20,8 +20,8 @@ public class Server {
 	public Server() {
 		// 仅当线程的数量是合理的或者线程只会运行很短的时间时，适合采用Executors工厂类的newCachedThreadPool()方法来创建执行器。
 		executor = (ThreadPoolExecutor) Executors.newCachedThreadPool();
-		
-//		executor  = (ThreadPoolExecutor) Executors.newFixedThreadPool(5);
+
+		// executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(5);
 	}
 
 	/**

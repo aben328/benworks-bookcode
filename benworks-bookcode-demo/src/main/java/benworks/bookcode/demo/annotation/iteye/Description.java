@@ -6,7 +6,6 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-
 /**
  * 说明:所有的Annotation会自动继承java.lang.annotation这一个接口,所以不能再去继承别的类或是接口. <br>
  * 最重要的一点,Annotation类型里面的参数该怎么设定: <br>

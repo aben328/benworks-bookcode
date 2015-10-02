@@ -3,15 +3,12 @@ package com.packtpub.java7.concurrency.chapter3.recipe6.task;
 import java.util.concurrent.Phaser;
 
 /**
- * Implements a subclass of the Phaser class. Overrides the onAdvance method to control
- * the change of phase 
- *
+ * Implements a subclass of the Phaser class. Overrides the onAdvance method to control the change of phase
  */
 public class MyPhaser extends Phaser {
 
 	/**
-	 * This method is called when the last register thread calls one of the advance methods
-	 * in the actual phase
+	 * This method is called when the last register thread calls one of the advance methods in the actual phase
 	 * @param phase Actual phase
 	 * @param registeredParties Number of registered threads
 	 * @return false to advance the phase, true to finish
@@ -38,7 +35,7 @@ public class MyPhaser extends Phaser {
 	 */
 	private boolean studentsArrived() {
 		System.out.printf("Phaser: The exam are going to start. The students are ready.\n");
-		System.out.printf("Phaser: We have %d students.\n",getRegisteredParties());
+		System.out.printf("Phaser: We have %d students.\n", getRegisteredParties());
 		return false;
 	}
 

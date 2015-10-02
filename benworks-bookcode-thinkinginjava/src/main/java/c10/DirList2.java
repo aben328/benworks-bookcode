@@ -1,4 +1,4 @@
-//: DirList2.java
+// : DirList2.java
 // Uses Java 1.1 anonymous inner classes
 package c10;
 

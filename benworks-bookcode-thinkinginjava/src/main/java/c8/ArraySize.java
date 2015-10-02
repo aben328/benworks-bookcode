@@ -4,7 +4,7 @@ class Weeble {
 } // A small mythical creature
 
 public class ArraySize {
-	
+
 	public static void main(String[] args) {
 		// Arrays of objects:
 		Weeble[] a; // Null handle

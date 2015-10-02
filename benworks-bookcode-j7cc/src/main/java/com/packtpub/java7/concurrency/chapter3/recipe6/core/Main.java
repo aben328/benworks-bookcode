@@ -4,8 +4,7 @@ import com.packtpub.java7.concurrency.chapter3.recipe6.task.MyPhaser;
 import com.packtpub.java7.concurrency.chapter3.recipe6.task.Student;
 
 /**
- * Main class of the example 
- *
+ * Main class of the example
  */
 public class Main {
 
@@ -14,36 +13,36 @@ public class Main {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		
+
 		// Creates the Phaser
-		MyPhaser phaser=new MyPhaser();
-		
+		MyPhaser phaser = new MyPhaser();
+
 		// Creates 5 students and register them in the phaser
-		Student students[]=new Student[5];
-		for (int i=0; i<students.length; i++){
-			students[i]=new Student(phaser);
+		Student students[] = new Student[5];
+		for (int i = 0; i < students.length; i++) {
+			students[i] = new Student(phaser);
 			phaser.register();
 		}
-		
+
 		// Create 5 threads for the students and start them
-		Thread threads[]=new Thread[students.length];
-		for (int i=0; i<students.length; i++) {
-			threads[i]=new Thread(students[i],"Student "+i);
+		Thread threads[] = new Thread[students.length];
+		for (int i = 0; i < students.length; i++) {
+			threads[i] = new Thread(students[i], "Student " + i);
 			threads[i].start();
 		}
-		
+
 		// Wait for the finalization of the threads
-		for (int i=0; i<threads.length; i++) {
+		for (int i = 0; i < threads.length; i++) {
 			try {
 				threads[i].join();
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 		}
-		
+
 		// Check that the Phaser is in the Terminated state
-		System.out.printf("Main: The phaser has finished: %s.\n",phaser.isTerminated());
-		
+		System.out.printf("Main: The phaser has finished: %s.\n", phaser.isTerminated());
+
 	}
 
 }

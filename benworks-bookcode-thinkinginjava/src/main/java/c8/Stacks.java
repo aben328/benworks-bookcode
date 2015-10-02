@@ -19,7 +19,7 @@ public class Stacks {
 		// Treating a stack as a Vector:
 		stk.addElement("The last line");
 		System.out.println("element 5 = " + stk.elementAt(5));
-		
+
 		System.out.println("popping elements:");
 		while (!stk.empty())
 			System.out.println(stk.pop());

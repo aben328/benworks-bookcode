@@ -1,9 +1,9 @@
 package c10;
 
-//: ZipCompress.java
-//Uses Java 1.1 Zip compression to compress
-//any number of files whose names are passed
-//on the command line.
+// : ZipCompress.java
+// Uses Java 1.1 Zip compression to compress
+// any number of files whose names are passed
+// on the command line.
 import java.io.*;
 import java.util.*;
 
@@ -14,8 +14,7 @@ public class ZipCompress {
 		try {
 			FileOutputStream f = new FileOutputStream("test.zip");
 			CheckedOutputStream csum = new CheckedOutputStream(f, new Adler32());
-			ZipOutputStream out = new ZipOutputStream(new BufferedOutputStream(
-					csum));
+			ZipOutputStream out = new ZipOutputStream(new BufferedOutputStream(csum));
 			out.setComment("A test of Java Zipping");
 			// Can't read the above comment, though
 			for (int i = 0; i < args.length; i++) {
@@ -35,8 +34,7 @@ public class ZipCompress {
 			System.out.println("Reading file");
 			FileInputStream fi = new FileInputStream("test.zip");
 			CheckedInputStream csumi = new CheckedInputStream(fi, new Adler32());
-			ZipInputStream in2 = new ZipInputStream(new BufferedInputStream(
-					csumi));
+			ZipInputStream in2 = new ZipInputStream(new BufferedInputStream(csumi));
 			ZipEntry ze;
 			System.out.println("Checksum: " + csumi.getChecksum().getValue());
 			while ((ze = in2.getNextEntry()) != null) {

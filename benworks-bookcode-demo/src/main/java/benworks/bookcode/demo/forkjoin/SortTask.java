@@ -4,7 +4,6 @@ import java.util.Arrays;
 import java.util.concurrent.RecursiveAction;
 
 /**
- * 
  * @author Ben
  */
 public class SortTask extends RecursiveAction {

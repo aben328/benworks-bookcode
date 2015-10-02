@@ -1,4 +1,4 @@
-//: TestEOF.java
+// : TestEOF.java
 // Testing for the end of file while reading
 // a byte at a time.
 package c10;
@@ -11,8 +11,7 @@ import java.io.IOException;
 public class TestEOF {
 	public static void main(String[] args) {
 		try {
-			DataInputStream in = new DataInputStream(new BufferedInputStream(
-					new FileInputStream("TestEof.java")));
+			DataInputStream in = new DataInputStream(new BufferedInputStream(new FileInputStream("TestEof.java")));
 			while (in.available() != 0)
 				System.out.print((char) in.readByte());
 		} catch (IOException e) {

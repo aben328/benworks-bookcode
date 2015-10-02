@@ -1,6 +1,6 @@
 package c10;
 
-//: MyWorld.java
+// : MyWorld.java
 import java.io.*;
 import java.util.*;
 
@@ -39,10 +39,8 @@ public class MyWorld {
 			ObjectOutputStream o2 = new ObjectOutputStream(buf2);
 			o2.writeObject(animals);
 			// Now get them back:
-			ObjectInputStream in1 = new ObjectInputStream(
-					new ByteArrayInputStream(buf1.toByteArray()));
-			ObjectInputStream in2 = new ObjectInputStream(
-					new ByteArrayInputStream(buf2.toByteArray()));
+			ObjectInputStream in1 = new ObjectInputStream(new ByteArrayInputStream(buf1.toByteArray()));
+			ObjectInputStream in2 = new ObjectInputStream(new ByteArrayInputStream(buf2.toByteArray()));
 			Vector animals1 = (Vector) in1.readObject();
 			Vector animals2 = (Vector) in1.readObject();
 			Vector animals3 = (Vector) in2.readObject();

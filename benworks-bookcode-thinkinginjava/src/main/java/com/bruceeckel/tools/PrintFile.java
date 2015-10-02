@@ -1,4 +1,4 @@
-//: PrintFile.java
+// : PrintFile.java
 // Shorthand class for opening an output file
 // for human-readable output.
 

@@ -1,9 +1,9 @@
 package c10;
 
-//: SerialCtl.java
-//Controlling serialization by adding your own 
+// : SerialCtl.java
+// Controlling serialization by adding your own
 
-//writeObject() and readObject() methods.
+// writeObject() and readObject() methods.
 import java.io.*;
 
 public class SerialCtl implements Serializable {
@@ -25,8 +25,7 @@ public class SerialCtl implements Serializable {
 		stream.writeObject(b);
 	}
 
-	private void readObject(ObjectInputStream stream) throws IOException,
-			ClassNotFoundException {
+	private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException {
 		stream.defaultReadObject();
 		b = (String) stream.readObject();
 	}
@@ -39,8 +38,7 @@ public class SerialCtl implements Serializable {
 			ObjectOutputStream o = new ObjectOutputStream(buf);
 			o.writeObject(sc);
 			// Now get it back:
-			ObjectInputStream in = new ObjectInputStream(
-					new ByteArrayInputStream(buf.toByteArray()));
+			ObjectInputStream in = new ObjectInputStream(new ByteArrayInputStream(buf.toByteArray()));
 			SerialCtl sc2 = (SerialCtl) in.readObject();
 			System.out.println("After:\n" + sc2);
 		} catch (Exception e) {

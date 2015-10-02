@@ -1,4 +1,4 @@
-//: OutFile.java
+// : OutFile.java
 // Shorthand class for opening an output file
 // for data storage.
 

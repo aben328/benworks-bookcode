@@ -31,7 +31,7 @@ public class PrintQueue {
 	 * Constructor of the class. It initializes the three objects
 	 */
 	public PrintQueue() {
-		semaphore = new Semaphore(3); //这是关键，有三个信号量
+		semaphore = new Semaphore(3); // 这是关键，有三个信号量
 		freePrinters = new boolean[3];
 		for (int i = 0; i < 3; i++) {
 			freePrinters[i] = true;

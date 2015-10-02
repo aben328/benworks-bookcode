@@ -9,12 +9,12 @@ public class Account {
 
 	public void debit(DollarAmount amount) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void credit(DollarAmount amount) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }

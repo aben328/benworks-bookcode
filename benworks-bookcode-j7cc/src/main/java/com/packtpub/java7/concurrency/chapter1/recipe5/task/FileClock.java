@@ -5,7 +5,6 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * Class that writes the actual date to a file every second
- * 
  */
 public class FileClock implements Runnable {
 

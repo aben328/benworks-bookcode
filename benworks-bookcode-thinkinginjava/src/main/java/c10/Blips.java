@@ -1,7 +1,7 @@
 package c10;
 
-//: Blips.java
-//Simple use of Externalizable & a pitfall
+// : Blips.java
+// Simple use of Externalizable & a pitfall
 import java.io.Externalizable;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -20,8 +20,7 @@ class Blip1 implements Externalizable {
 		System.out.println("Blip1.writeExternal");
 	}
 
-	public void readExternal(ObjectInput in) throws IOException,
-			ClassNotFoundException {
+	public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException {
 		System.out.println("Blip1.readExternal");
 	}
 }
@@ -35,8 +34,7 @@ class Blip2 implements Externalizable {
 		System.out.println("Blip2.writeExternal");
 	}
 
-	public void readExternal(ObjectInput in) throws IOException,
-			ClassNotFoundException {
+	public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException {
 		System.out.println("Blip2.readExternal");
 	}
 }
@@ -47,15 +45,13 @@ public class Blips {
 		Blip1 b1 = new Blip1();
 		Blip2 b2 = new Blip2();
 		try {
-			ObjectOutputStream o = new ObjectOutputStream(new FileOutputStream(
-					"Blips.out"));
+			ObjectOutputStream o = new ObjectOutputStream(new FileOutputStream("Blips.out"));
 			System.out.println("Saving objects:");
 			o.writeObject(b1);
 			o.writeObject(b2);
 			o.close();
 			// Now get them back:
-			ObjectInputStream in = new ObjectInputStream(new FileInputStream(
-					"Blips.out"));
+			ObjectInputStream in = new ObjectInputStream(new FileInputStream("Blips.out"));
 			System.out.println("Recovering b1:");
 			b1 = (Blip1) in.readObject();
 			// OOPS! Throws an exception:

@@ -18,11 +18,8 @@ public class FileSearch implements Runnable {
 
 	/**
 	 * Constructor of the class
-	 * 
-	 * @param initPath
-	 *            : Initial path for the search
-	 * @param fileName
-	 *            : Name of the file we are searching for
+	 * @param initPath : Initial path for the search
+	 * @param fileName : Name of the file we are searching for
 	 */
 	public FileSearch(String initPath, String fileName) {
 		this.initPath = initPath;
@@ -39,7 +36,7 @@ public class FileSearch implements Runnable {
 			try {
 				directoryProcess(file);
 			} catch (InterruptedException e) {
-				System.out.printf("%s: The search has been interrupted",Thread.currentThread().getName());
+				System.out.printf("%s: The search has been interrupted", Thread.currentThread().getName());
 				cleanResources();
 			}
 		}
@@ -54,11 +51,8 @@ public class FileSearch implements Runnable {
 
 	/**
 	 * Method that process a directory
-	 * 
-	 * @param file
-	 *            : Directory to process
-	 * @throws InterruptedException
-	 *             : If the thread is interrupted
+	 * @param file : Directory to process
+	 * @throws InterruptedException : If the thread is interrupted
 	 */
 	private void directoryProcess(File file) throws InterruptedException {
 
@@ -83,16 +77,13 @@ public class FileSearch implements Runnable {
 
 	/**
 	 * Method that process a File
-	 * 
-	 * @param file
-	 *            : File to process
-	 * @throws InterruptedException
-	 *             : If the thread is interrupted
+	 * @param file : File to process
+	 * @throws InterruptedException : If the thread is interrupted
 	 */
 	private void fileProcess(File file) throws InterruptedException {
 		// Check the name
 		if (file.getName().equals(fileName)) {
-			System.out.printf("%s : %s\n",Thread.currentThread().getName() ,file.getAbsolutePath());
+			System.out.printf("%s : %s\n", Thread.currentThread().getName(), file.getAbsolutePath());
 		}
 
 		// Check the interruption

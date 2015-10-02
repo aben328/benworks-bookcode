@@ -1,6 +1,6 @@
-//: WhoAmI.java
-//Finds out your network address when you're 
-//connected to the Internet.
+// : WhoAmI.java
+// Finds out your network address when you're
+// connected to the Internet.
 package c15;
 
 import java.net.*;
