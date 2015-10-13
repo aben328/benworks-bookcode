@@ -40,8 +40,9 @@
 		<spring.version>4.1.5.RELEASE</spring.version>
 		<hibernate.version>3.6.10.Final</hibernate.version>
 		<common.version>2.0</common.version>
+		<javassist.version>3.18.2-GA</javassist.version>
+		<netty.version>4.0.31.Final</netty.version>
 	</properties>
-
 
 	<dependencies>
 		<!-- Logging 相关的依赖 -->
