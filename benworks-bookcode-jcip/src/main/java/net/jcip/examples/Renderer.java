@@ -31,6 +31,7 @@ public abstract class Renderer {
 
 		try {
 			for (int t = 0, n = info.size(); t < n; t++) {
+				// 通过从completionService中获取结果以及使每张图片在下载完成后立刻显示出来
 				Future<ImageData> f = completionService.take();
 				ImageData imageData = f.get();
 				renderImage(imageData);

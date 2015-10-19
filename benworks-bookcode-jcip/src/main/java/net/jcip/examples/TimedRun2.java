@@ -15,7 +15,7 @@ public class TimedRun2 {
 
 	public static void timedRun(final Runnable r, long timeout, TimeUnit unit) throws InterruptedException {
 		class RethrowableTask implements Runnable {
-			private volatile Throwable t;
+			private volatile Throwable t;// 由于t将在两个线程（taskThread,task)之间共享，所有声明为volatile类型
 
 			public void run() {
 				try {
@@ -39,7 +39,7 @@ public class TimedRun2 {
 				taskThread.interrupt();
 			}
 		}, timeout, unit);
-		taskThread.join(unit.toMillis(timeout));
+		taskThread.join(unit.toMillis(timeout));// 依赖一个限时的join，因此存在着join的不足
 		task.rethrow();
 	}
 }

@@ -17,7 +17,6 @@ import java.lang.annotation.Target;
  * the interleaving of those actions by the runtime, and without requiring any additional synchronization or
  * coordination on the part of the caller.
  */
-
 @Documented
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.CLASS)

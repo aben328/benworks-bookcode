@@ -29,4 +29,26 @@ class BrokenPrimeProducer extends Thread {
 	public void cancel() {
 		cancelled = true;
 	}
+
+	void consumePrimes() throws InterruptedException {
+		BlockingQueue<BigInteger> primes = new LinkedBlockingDeque<BigInteger>();
+		BrokenPrimeProducer producer = new BrokenPrimeProducer(primes);
+		producer.start();
+		try {
+			while (needMorePrimes()) {
+				consume(primes.take());
+			}
+		} finally {
+			producer.cancel();
+		}
+	}
+
+	private void consume(BigInteger take) {
+		System.out.println("consume:" + take);
+	}
+
+	private boolean needMorePrimes() {
+		return false;
+	}
+
 }

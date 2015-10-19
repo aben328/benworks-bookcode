@@ -18,6 +18,7 @@ public class TimeBudget {
 		for (TravelCompany company : companies)
 			tasks.add(new QuoteTask(company, travelInfo));
 
+		// 使用限时 的InvokeAll，将多个任务提交 到一个ExecutorServeice并获得结果
 		List<Future<TravelQuote>> futures = exec.invokeAll(tasks, time, unit);
 
 		List<TravelQuote> quotes = new ArrayList<TravelQuote>(tasks.size());
@@ -39,6 +40,7 @@ public class TimeBudget {
 
 }
 
+// 在预定的时间内请求旅游报价
 class QuoteTask implements Callable<TravelQuote> {
 	private final TravelCompany company;
 	private final TravelInfo travelInfo;
