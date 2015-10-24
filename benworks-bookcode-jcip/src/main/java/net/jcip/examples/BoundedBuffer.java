@@ -1,6 +1,5 @@
 package net.jcip.examples;
 
-import net.jcip.annotations.*;
 
 /**
  * BoundedBuffer

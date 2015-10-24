@@ -1,10 +1,12 @@
 package net.jcip.examples;
 
 import java.math.BigInteger;
-import java.util.concurrent.atomic.*;
-import javax.servlet.*;
+import java.util.concurrent.atomic.AtomicLong;
 
-import net.jcip.annotations.*;
+import javax.servlet.GenericServlet;
+import javax.servlet.Servlet;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
 
 /**
  * CountingFactorizer Servlet that counts requests using AtomicLong
